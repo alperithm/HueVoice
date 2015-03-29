@@ -7,6 +7,11 @@
 #import "PHAppDelegate.h"
 
 #import <HueSDK_iOS/HueSDK.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEPocketsphinxController.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEFliteController.h>
+#import <Slt/Slt.h>
 #define MAX_HUE 65535
 
 @interface PHControlLightsViewController()
@@ -15,6 +20,15 @@
 @property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
 @property (nonatomic,weak) IBOutlet UILabel *bridgeLastHeartbeatLabel;
 @property (nonatomic,weak) IBOutlet UIButton *randomLightsButton;
+
+// 音声認識データ
+@property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
+@property (nonatomic, strong) OEPocketsphinxController *pocketsphinxController;
+@property (nonatomic, strong) OEFliteController *fliteController;
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedDictionary;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedLanguageModel;
+@property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedDictionary;
 
 @end
 
@@ -44,6 +58,43 @@
     self.navigationItem.title = @"QuickStart";
     
     [self noLocalConnection];
+    
+    // 音声データ格納
+    self.fliteController = [[OEFliteController alloc] init];
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    self.openEarsEventsObserver.delegate = self;
+    [self.openEarsEventsObserver setDelegate:self];
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+    NSArray *words = @[
+                       @"SUNDAY",
+                       @"MONDAY",
+                       @"TUESDAY",
+                       @"WEDNESDAY",
+                       @"THURSDAY",
+                       @"FRIDAY",
+                       @"SATURDAY",
+                       @"QUIDNUNC",
+                       @"CHANGE MODEL",
+                       ];
+    OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
+    
+    // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
+    
+    NSError *error = [languageModelGenerator generateLanguageModelFromArray:words withFilesNamed:@"FirstOpenEarsDynamicLanguageModel" forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
+    
+    
+    if(error) {
+        NSLog(@"Dynamic language generator reported error %@", [error description]);
+    } else {
+        self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"FirstOpenEarsDynamicLanguageModel"];
+        self.pathToFirstDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"FirstOpenEarsDynamicLanguageModel"];
+    }
+    
+    [[OEPocketsphinxController sharedInstance] setActive:true error:nil];
+    if(![OEPocketsphinxController sharedInstance].isListening) {
+        [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren't already listening.
+        NSLog(@"hogehgoehgoehgoe");
+    }
 }
 
 - (UIRectEdge)edgesForExtendedLayout {
@@ -136,6 +187,15 @@
 
 - (void)findNewBridgeButtonAction{
     [UIAppDelegate searchForBridgeLocal];
+}
+
+// 音声データ認識
+- (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis
+                        recognitionScore:(NSString *)recognitionScore
+                             utteranceID:(NSString *)utteranceID
+{
+    NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@",
+          hypothesis, recognitionScore, utteranceID);
 }
 
 @end

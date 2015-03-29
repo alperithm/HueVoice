@@ -25,6 +25,12 @@
 		4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD5165693F4008E9D69 /* press_smartbridge.png */; };
 		4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */; };
 		87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87194E78184F7FA700576916 /* CoreGraphics.framework */; };
+		8FA10C111AC8632C009E18AB /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FA10C0D1AC8632C009E18AB /* AcousticModelEnglish.bundle */; };
+		8FA10C121AC8632C009E18AB /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FA10C0E1AC8632C009E18AB /* AcousticModelSpanish.bundle */; };
+		8FA10C131AC8632C009E18AB /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C0F1AC8632C009E18AB /* OpenEars.framework */; };
+		8FA10C141AC8632C009E18AB /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C101AC8632C009E18AB /* Slt.framework */; };
+		8FA10C161AC86344009E18AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C151AC86344009E18AB /* AVFoundation.framework */; };
+		8FA10C181AC8634F009E18AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C171AC8634F009E18AB /* AudioToolbox.framework */; };
 		F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */; };
 		F715240218337FD50033689C /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F518337FD50033689C /* DDASLLogger.m */; };
 		F715240318337FD50033689C /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F718337FD50033689C /* DDFileLogger.m */; };
@@ -62,6 +68,12 @@
 		4CCACFD5165693F4008E9D69 /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
 		4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8FA10C0D1AC8632C009E18AB /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		8FA10C0E1AC8632C009E18AB /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		8FA10C0F1AC8632C009E18AB /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		8FA10C101AC8632C009E18AB /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		8FA10C151AC86344009E18AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8FA10C171AC8634F009E18AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F71523F218337FD50033689C /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		F71523F418337FD50033689C /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -86,8 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA10C181AC8634F009E18AB /* AudioToolbox.framework in Frameworks */,
+				8FA10C161AC86344009E18AB /* AVFoundation.framework in Frameworks */,
+				8FA10C141AC8632C009E18AB /* Slt.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
+				8FA10C131AC8632C009E18AB /* OpenEars.framework in Frameworks */,
 				166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */,
 				4CCACF99165692D4008E9D69 /* Foundation.framework in Frameworks */,
 			);
@@ -127,6 +143,12 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FA10C171AC8634F009E18AB /* AudioToolbox.framework */,
+				8FA10C151AC86344009E18AB /* AVFoundation.framework */,
+				8FA10C0D1AC8632C009E18AB /* AcousticModelEnglish.bundle */,
+				8FA10C0E1AC8632C009E18AB /* AcousticModelSpanish.bundle */,
+				8FA10C0F1AC8632C009E18AB /* OpenEars.framework */,
+				8FA10C101AC8632C009E18AB /* Slt.framework */,
 				166943141ABC300800BF8B37 /* HueSDK_iOS.framework */,
 				87194E78184F7FA700576916 /* CoreGraphics.framework */,
 				F71523F118337FD50033689C /* Lumberjack */,
@@ -271,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCACFA1165692D5008E9D69 /* InfoPlist.strings in Resources */,
+				8FA10C121AC8632C009E18AB /* AcousticModelSpanish.bundle in Resources */,
 				4CCACFA9165692D5008E9D69 /* Default.png in Resources */,
 				4CCACFAB165692D5008E9D69 /* Default@2x.png in Resources */,
 				4CCACFAD165692D5008E9D69 /* Default-568h@2x.png in Resources */,
@@ -279,6 +302,7 @@
 				4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */,
 				4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */,
 				4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */,
+				8FA10C111AC8632C009E18AB /* AcousticModelEnglish.bundle in Resources */,
 				F7ADC2A117FDAAA70038A1D6 /* PHControlLightsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
