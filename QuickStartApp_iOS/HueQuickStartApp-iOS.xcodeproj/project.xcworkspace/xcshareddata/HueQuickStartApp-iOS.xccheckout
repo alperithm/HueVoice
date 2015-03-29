@@ -10,6 +10,8 @@
 	<string>HueQuickStartApp-iOS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>269D6C064EB0B5726D3D24955784DCE565BB9745</key>
+		<string>github.com:alperithm/HueVoice.git</string>
 		<key>BABF2D0599CA6E23FE31A3B1C37F407CA3D850D7</key>
 		<string>https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>QuickStartApp_iOS/HueQuickStartApp-iOS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BABF2D0599CA6E23FE31A3B1C37F407CA3D850D7</key>
+		<key>269D6C064EB0B5726D3D24955784DCE565BB9745</key>
 		<string>../../..</string>
+		<key>BABF2D0599CA6E23FE31A3B1C37F407CA3D850D7</key>
+		<string>../../../../PhilipsHueSDK-iOS-OSX</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX.git</string>
+	<string>github.com:alperithm/HueVoice.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BABF2D0599CA6E23FE31A3B1C37F407CA3D850D7</string>
+	<string>269D6C064EB0B5726D3D24955784DCE565BB9745</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>269D6C064EB0B5726D3D24955784DCE565BB9745</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HueVoice</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -66,15 +66,13 @@
     [self.openEarsEventsObserver setDelegate:self];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
     NSArray *words = @[
-                       @"SUNDAY",
-                       @"MONDAY",
-                       @"TUESDAY",
+                       @"OHAYOU",
+                       @"TANOSHI",
+                       @"KANASHI",
                        @"WEDNESDAY",
                        @"THURSDAY",
                        @"FRIDAY",
                        @"SATURDAY",
-                       @"QUIDNUNC",
-                       @"CHANGE MODEL",
                        ];
     OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
     
@@ -93,7 +91,6 @@
     [[OEPocketsphinxController sharedInstance] setActive:true error:nil];
     if(![OEPocketsphinxController sharedInstance].isListening) {
         [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren't already listening.
-        NSLog(@"hogehgoehgoehgoe");
     }
 }
 
@@ -196,6 +193,47 @@
 {
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@",
           hypothesis, recognitionScore, utteranceID);
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+    
+    for (PHLight *light in cache.lights.allValues) {
+        
+        PHLightState *lightState = [[PHLightState alloc] init];
+        
+        //[self changeLightColorWithHypothesis:hypothesis lightState:lightState];
+        [self setColorWithWord:@"OHAYOU" hypothesis:hypothesis color:@12345 lightState:lightState];
+        
+        [lightState setBrightness:[NSNumber numberWithInt:254]];
+        [lightState setSaturation:[NSNumber numberWithInt:254]];
+        
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                
+                NSLog(@"Response: %@",message);
+            }
+        }];
+    }
+}
+
+-(void)changeLightColorWithHypothesis:(NSString *)hypothesis
+             lightState:(PHLightState *)lightState
+{
+    NSLog(@"%@", [[hypothesis componentsSeparatedByString:@" "] objectAtIndex:0]);
+}
+
+-(void)setColorWithWord:(NSString *)word
+             hypothesis:(NSString *)hypothesis
+                  color:(NSNumber *)color
+             lightState:(PHLightState *)lightState
+{
+    NSRange match = [word rangeOfString:[[hypothesis componentsSeparatedByString:@" "] objectAtIndex:0] options:NSRegularExpressionSearch];
+    if (match.location != NSNotFound) {
+        [lightState setHue:color];
+    } else {
+        NSLog(@"Not Found");
+    }
 }
 
 @end
