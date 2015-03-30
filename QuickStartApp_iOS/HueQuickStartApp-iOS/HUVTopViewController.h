@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EZAudio.h"
+#import <OpenEars/OEEventsObserver.h>
 
-@interface HUVTopViewController : UIViewController<EZMicrophoneDelegate>
+@interface HUVTopViewController : UIViewController<EZMicrophoneDelegate, OEEventsObserverDelegate>
 
 @property (nonatomic, weak) IBOutlet EZAudioPlotGL *audioPlot;
 @property (nonatomic, strong) EZMicrophone *microphone;

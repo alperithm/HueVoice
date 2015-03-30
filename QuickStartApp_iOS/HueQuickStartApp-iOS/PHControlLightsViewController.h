@@ -4,7 +4,8 @@
  ********************************************************************************/
 
 #import <UIKit/UIKit.h>
+#import <OpenEars/OEEventsObserver.h>
 
-@interface PHControlLightsViewController : UIViewController
+@interface PHControlLightsViewController : UIViewController<OEEventsObserverDelegate>
 
 @end
