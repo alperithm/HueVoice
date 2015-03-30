@@ -23,8 +23,8 @@
     if (self = [super init]) {
         self.accountStore = [[ACAccountStore alloc] init];
         [self setAccount];
-        [self generateSearchRequest];
     }
+    return self;
 }
 
 - (void)setAccount {
@@ -58,67 +58,61 @@
                                             }];
 }
 
-- (void)generateSearchRequest {
-    [self.accountStore requestAccessToAccountsWithType:self.accountType
-                                               options:NULL
-                                            completion:^(BOOL granted, NSError *error) {
-                                                if (granted) {
-                                                    //  Step 2:  Create a request
-                                                    NSArray *twitterAccounts = [self.accountStore accountsWithAccountType:self.accountType];
-                                                    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"];
-                                                    
-                                                    NSDictionary *params = @{@"q" : @"%24adf2015",
-                                                                             @"count" : @"10"};
-                                                    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                                                                            requestMethod:SLRequestMethodGET
-                                                                                                      URL:url
-                                                                                               parameters:params];
-                                                    
-                                                    //  Attach an account to the request
-                                                    [request setAccount:[twitterAccounts lastObject]];
-                                                    [self requestSearchAPI:request];
-                                                }
-                                                else {
-                                                    // Access was not granted, or an error occurred
-                                                    NSLog(@"%@", [error localizedDescription]);
-                                                }
-                                            }
-     ];
-}
-
-- (void)requestSearchAPI:(SLRequest *)request {
-    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-        if (responseData) {
-            if (urlResponse.statusCode >= 200 &&
-                urlResponse.statusCode < 300) {
-                
-                NSError *jsonError;
-                NSDictionary *timelineData = [NSJSONSerialization JSONObjectWithData:responseData
-                                                                             options:NSJSONReadingAllowFragments
-                                                                               error:&jsonError];
-                if (timelineData) {
-                    
-                    NSMutableArray *textLists = @[].mutableCopy;
-                    for (NSDictionary *meta in timelineData[@"statuses"]) {
-                        NSString *text = [NSString stringWithFormat:@"%@",  meta[@"text"]];
-                        [textLists addObject:text];
+- (void)requestTweetSearchAPI {
+    id completionHandler = ^(BOOL granted, NSError *error) {
+        if (granted) {
+            //  Step 2:  Create a request
+            NSArray *twitterAccounts = [self.accountStore accountsWithAccountType:self.accountType];
+            NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"];
+            
+            NSDictionary *params = @{@"q" : @"%24adf2015",
+                                     @"count" : @"10"};
+            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                    requestMethod:SLRequestMethodGET
+                                                              URL:url
+                                                       parameters:params];
+            
+            //  Attach an account to the request
+            [request setAccount:[twitterAccounts lastObject]];
+            [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                if (responseData) {
+                    if (urlResponse.statusCode >= 200 &&
+                        urlResponse.statusCode < 300) {
+                        
+                        NSError *jsonError;
+                        NSDictionary *timelineData = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                                     options:NSJSONReadingAllowFragments
+                                                                                       error:&jsonError];
+                        if (timelineData) {
+                            
+                            NSMutableArray *textLists = @[].mutableCopy;
+                            for (NSDictionary *meta in timelineData[@"statuses"]) {
+                                NSString *text = [NSString stringWithFormat:@"%@",  meta[@"text"]];
+                                [textLists addObject:text];
+                            }
+                            NSDictionary *userInfo = @{@"tweets" : textLists};
+                            [[NSNotificationCenter defaultCenter] postNotificationName:SuccessGetTweesList
+                                                                                object:self
+                                                                              userInfo:userInfo];
+                            
+                        }
+                        else {
+                            // Our JSON deserialization went awry
+                            NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
+                        }
+                    } else {
+                        // The server did not respond ... were we rate-limited?
+                        NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
                     }
-                    NSDictionary *userInfo = @{@"tweets" : textLists};
-                    [[NSNotificationCenter defaultCenter] postNotificationName:SuccessGetTweesList
-                                                                        object:self
-                                                                      userInfo:userInfo];
-
                 }
-                else {
-                    // Our JSON deserialization went awry
-                    NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
-                }
-            } else {
-                // The server did not respond ... were we rate-limited?
-                NSLog(@"The response status code is %ld", (long)urlResponse.statusCode);
-            }
+            }];
         }
-    }];
+        else {
+            // Access was not granted, or an error occurred
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    };
+    [self.accountStore requestAccessToAccountsWithType:self.accountType options:NULL completion:completionHandler];
 }
 
 @end

@@ -25,6 +25,7 @@ NSString *const kUpdateTweetsInfo  = @"kUpdateTweetsInfo";
     // Do any additional setup after loading the view.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSuccessGetTweetList:) name:SuccessGetTweesList object:nil];
     self.tweetManager = [[TweetManager alloc] init];
+    [self.tweetManager requestTweetSearchAPI];
 }
 
 - (void)didReceiveMemoryWarning {

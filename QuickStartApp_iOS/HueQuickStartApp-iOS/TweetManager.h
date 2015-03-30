@@ -12,6 +12,6 @@
 
 @interface TweetManager : NSObject
 
-- (void)generateSearchRequest;
+- (void)requestTweetSearchAPI;
 
 @end
