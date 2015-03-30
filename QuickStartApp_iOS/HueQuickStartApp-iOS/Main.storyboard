@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ivA-wu-9tQ">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
@@ -13,45 +12,77 @@
                         <viewControllerLayoutGuide type="top" id="QoO-E4-koa"/>
                         <viewControllerLayoutGuide type="bottom" id="eAj-0o-rHP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I2Z-JG-MQD" customClass="HUV">
+                    <view key="view" contentMode="scaleToFill" id="I2Z-JG-MQD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDE-WF-ddK">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDE-WF-ddK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
+                                    <barButtonItem systemItem="add" id="q7a-rN-d4T">
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="ivA-wu-9tQ" id="So8-9m-fE4"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JR3-qv-XTb"/>
-                                    <barButtonItem style="plain" systemItem="pause" id="e4i-qs-M2y"/>
+                                    <barButtonItem image="menu" style="plain" id="e4i-qs-M2y">
+                                        <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="1hG-IC-ZI0" kind="popoverPresentation" popoverAnchorBarButtonItem="e4i-qs-M2y" id="udN-24-SrU">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htu-Uc-hp2" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YDE-WF-ddK" firstAttribute="leading" secondItem="I2Z-JG-MQD" secondAttribute="leading" id="62g-mY-Ruk"/>
+                            <constraint firstItem="Htu-Uc-hp2" firstAttribute="top" secondItem="QoO-E4-koa" secondAttribute="bottom" constant="180" id="Hsn-ep-NMm"/>
                             <constraint firstAttribute="trailing" secondItem="YDE-WF-ddK" secondAttribute="trailing" id="Xig-Iy-0WI"/>
                             <constraint firstItem="eAj-0o-rHP" firstAttribute="top" secondItem="YDE-WF-ddK" secondAttribute="bottom" id="bz8-Nl-nZA"/>
+                            <constraint firstItem="Htu-Uc-hp2" firstAttribute="centerY" secondItem="I2Z-JG-MQD" secondAttribute="centerY" id="kVZ-R0-KXa"/>
+                            <constraint firstAttribute="trailing" secondItem="Htu-Uc-hp2" secondAttribute="trailing" id="zF4-Ac-Did"/>
+                            <constraint firstItem="Htu-Uc-hp2" firstAttribute="leading" secondItem="I2Z-JG-MQD" secondAttribute="leading" id="zbG-Fx-gCr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YDE-WF-ddK"/>
+                                <exclude reference="Htu-Uc-hp2"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="bz8-Nl-nZA"/>
                                 <exclude reference="62g-mY-Ruk"/>
                                 <exclude reference="Xig-Iy-0WI"/>
-                                <exclude reference="bz8-Nl-nZA"/>
+                                <exclude reference="Hsn-ep-NMm"/>
+                                <exclude reference="kVZ-R0-KXa"/>
+                                <exclude reference="zF4-Ac-Did"/>
+                                <exclude reference="zbG-Fx-gCr"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YDE-WF-ddK"/>
+                                <include reference="Htu-Uc-hp2"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="bz8-Nl-nZA"/>
                                 <include reference="62g-mY-Ruk"/>
                                 <include reference="Xig-Iy-0WI"/>
-                                <include reference="bz8-Nl-nZA"/>
+                                <include reference="Hsn-ep-NMm"/>
+                                <include reference="kVZ-R0-KXa"/>
+                                <include reference="zF4-Ac-Did"/>
+                                <include reference="zbG-Fx-gCr"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="Htu-Uc-hp2" id="cPQ-UP-0y5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44m-0n-IGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +98,7 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZZV-nf-hut">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.32156862749999998" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nLg-P4-rpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,4 +106,7 @@
             <point key="canvasLocation" x="1140" y="618.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="40" height="40"/>
+    </resources>
 </document>
