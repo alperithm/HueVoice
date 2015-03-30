@@ -9,7 +9,7 @@
 #import <sys/ucred.h>
 #import "HUVTopViewController.h"
 #import "CSAnimationView.h"
-#import "TweetManager.h"
+//#import "TweetManager.h"
 #import "Notifications.h"
 
 #import "PHAppDelegate.h"
@@ -26,7 +26,7 @@
 @interface HUVTopViewController ()
 
 @property (nonatomic) NSInteger popUpIndex;
-@property (nonatomic, strong) TweetManager *tweetManager;
+//@property (nonatomic, strong) TweetManager *tweetManager;
 
 // 音声認識データ
 @property (nonatomic, strong) OEEventsObserver *openEarsEventsObserver;
@@ -45,13 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.microphone = [EZMicrophone microphoneWithDelegate:self];
-
-    self.audioPlot.backgroundColor = [UIColor clearColor];
-    self.audioPlot.color = [UIColor whiteColor];
-    self.audioPlot.plotType = EZPlotTypeBuffer;
-    
     // Hue&OpenEars
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     // Register for the local heartbeat notifications
@@ -81,7 +74,7 @@
     // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
     
     NSError *error = [languageModelGenerator generateLanguageModelFromArray:_words withFilesNamed:@"FirstOpenEarsDynamicLanguageModel" forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
-    
+
     
     if(error) {
         NSLog(@"Dynamic language generator reported error %@", [error description]);
@@ -89,11 +82,18 @@
         self.pathToFirstDynamicallyGeneratedLanguageModel = [languageModelGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"FirstOpenEarsDynamicLanguageModel"];
         self.pathToFirstDynamicallyGeneratedDictionary = [languageModelGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"FirstOpenEarsDynamicLanguageModel"];
     }
-    
+
     [[OEPocketsphinxController sharedInstance] setActive:true error:nil];
     if(![OEPocketsphinxController sharedInstance].isListening) {
         [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:self.pathToFirstDynamicallyGeneratedLanguageModel dictionaryAtPath:self.pathToFirstDynamicallyGeneratedDictionary acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:FALSE]; // Start speech recognition if we aren't already listening.
     }
+    
+    // Do any additional setup after loading the view.
+    self.microphone = [EZMicrophone microphoneWithDelegate:self];
+    
+    self.audioPlot.backgroundColor = [UIColor clearColor];
+    self.audioPlot.color = [UIColor whiteColor];
+    self.audioPlot.plotType = EZPlotTypeBuffer;
 
 }
 
@@ -106,8 +106,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSuccessGetTweetList:) name:SuccessGetTweesList object:nil];
-    self.tweetManager = [[TweetManager alloc] init];
-    [self.tweetManager requestTweetSearchAPI];
+//    self.tweetManager = [[TweetManager alloc] init];
+//    [self.tweetManager requestTweetSearchAPI];
     [self.microphone startFetchingAudio];
 }
 

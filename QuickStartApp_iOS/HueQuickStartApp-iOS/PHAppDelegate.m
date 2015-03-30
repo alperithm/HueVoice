@@ -26,7 +26,7 @@
 @implementation PHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     /***************************************************
      The Hue SDK is created as a property in the App delegate .h file
@@ -45,12 +45,12 @@
     [self.phHueSDK startUpSDK];
     [self.phHueSDK enableLogging:YES];
     // Create the main view controller in a navigation controller and make the navigation controller the rootviewcontroller of the app
-//    PHControlLightsViewController *controlLightsViewController = [[PHControlLightsViewController alloc] initWithNibName:@"PHControlLightsViewController" bundle:[NSBundle mainBundle]];
+    PHControlLightsViewController *controlLightsViewController = [[PHControlLightsViewController alloc] initWithNibName:@"PHControlLightsViewController" bundle:[NSBundle mainBundle]];
 
-////    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlLightsViewController];
-//
-//    self.window.rootViewController = self.navigationController;
-//    [self.window makeKeyAndVisible];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlLightsViewController];
+
+    self.window.rootViewController = self.navigationController;
+    [self.window makeKeyAndVisible];
 
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
 
