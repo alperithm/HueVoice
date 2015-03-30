@@ -34,6 +34,10 @@
 		4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD5165693F4008E9D69 /* press_smartbridge.png */; };
 		4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */; };
 		87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87194E78184F7FA700576916 /* CoreGraphics.framework */; };
+		CA6266051AC8D7650074832A /* TweetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6266041AC8D7650074832A /* TweetManager.m */; };
+		CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266061AC8D7AC0074832A /* Social.framework */; };
+		CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266081AC8D7B20074832A /* Accounts.framework */; };
+		CA8053B81AC8DE7900D291E8 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8053B71AC8DE7900D291E8 /* Notifications.m */; };
 		F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */; };
 		F715240218337FD50033689C /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F518337FD50033689C /* DDASLLogger.m */; };
 		F715240318337FD50033689C /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F718337FD50033689C /* DDFileLogger.m */; };
@@ -83,6 +87,12 @@
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C34A5998958191594B989948 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E0B3725E4BD7CA76322D06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CA6266031AC8D7650074832A /* TweetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetManager.h; sourceTree = "<group>"; };
+		CA6266041AC8D7650074832A /* TweetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetManager.m; sourceTree = "<group>"; };
+		CA6266061AC8D7AC0074832A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CA6266081AC8D7B20074832A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CA8053B61AC8DE7900D291E8 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		CA8053B71AC8DE7900D291E8 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
 		F71523F218337FD50033689C /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		F71523F418337FD50033689C /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -107,11 +117,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */,
 				25F7449E1AC8DE53007FB565 /* libPods-EZAudio.a in Frameworks */,
 				25F7449C1AC8DBC4007FB565 /* AudioToolbox.framework in Frameworks */,
 				25F7449A1AC8DB9A007FB565 /* GLKit.framework in Frameworks */,
 				25F744981AC8DB92007FB565 /* AVFoundation.framework in Frameworks */,
+=======
+				CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */,
+				CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */,
+>>>>>>> master
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
 				166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */,
@@ -164,11 +179,16 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				257D12851AC8EF83001F67DC /* libPods-Canvas.a */,
 				25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */,
 				25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */,
 				25F744991AC8DB9A007FB565 /* GLKit.framework */,
 				25F744971AC8DB92007FB565 /* AVFoundation.framework */,
+=======
+				CA6266081AC8D7B20074832A /* Accounts.framework */,
+				CA6266061AC8D7AC0074832A /* Social.framework */,
+>>>>>>> master
 				166943141ABC300800BF8B37 /* HueSDK_iOS.framework */,
 				87194E78184F7FA700576916 /* CoreGraphics.framework */,
 				F71523F118337FD50033689C /* Lumberjack */,
@@ -191,7 +211,14 @@
 				4CCACF9D165692D4008E9D69 /* Supporting Files */,
 				25F744921AC8CD01007FB565 /* HUVTopViewController.h */,
 				25F744931AC8CD01007FB565 /* HUVTopViewController.m */,
+<<<<<<< HEAD
 				25F744951AC8D247007FB565 /* Images.xcassets */,
+=======
+				CA6266031AC8D7650074832A /* TweetManager.h */,
+				CA6266041AC8D7650074832A /* TweetManager.m */,
+				CA8053B61AC8DE7900D291E8 /* Notifications.h */,
+				CA8053B71AC8DE7900D291E8 /* Notifications.m */,
+>>>>>>> master
 			);
 			path = "HueQuickStartApp-iOS";
 			sourceTree = "<group>";
@@ -378,6 +405,7 @@
 				F715240218337FD50033689C /* DDASLLogger.m in Sources */,
 				25F744941AC8CD01007FB565 /* HUVTopViewController.m in Sources */,
 				4CCACFA3165692D5008E9D69 /* main.m in Sources */,
+				CA8053B81AC8DE7900D291E8 /* Notifications.m in Sources */,
 				4CCACFA7165692D5008E9D69 /* PHAppDelegate.m in Sources */,
 				F715240718337FD50033689C /* DispatchQueueLogFormatter.m in Sources */,
 				F715240518337FD50033689C /* DDTTYLogger.m in Sources */,
@@ -386,6 +414,7 @@
 				F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */,
 				4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */,
 				F715240318337FD50033689C /* DDFileLogger.m in Sources */,
+				CA6266051AC8D7650074832A /* TweetManager.m in Sources */,
 				F7ADC2A017FDAAA70038A1D6 /* PHControlLightsViewController.m in Sources */,
 				F715240618337FD50033689C /* ContextFilterLogFormatter.m in Sources */,
 			);

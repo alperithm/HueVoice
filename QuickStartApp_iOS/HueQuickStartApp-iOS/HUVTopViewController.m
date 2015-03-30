@@ -8,11 +8,23 @@
 
 #import <sys/ucred.h>
 #import "HUVTopViewController.h"
+<<<<<<< HEAD
 #import "CSAnimationView.h"
 
 @interface HUVTopViewController ()
 
 @property (nonatomic) NSInteger popUpIndex;
+=======
+#import "TweetManager.h"
+#import "Notifications.h"
+
+NSString *const kUpdateTweetsInfo  = @"kUpdateTweetsInfo";
+
+@interface HUVTopViewController ()
+
+@property (nonatomic, strong) TweetManager *tweetManager;
+
+>>>>>>> master
 @end
 
 @implementation HUVTopViewController
@@ -36,11 +48,27 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.microphone startFetchingAudio];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSuccessGetTweetList:) name:SuccessGetTweesList object:nil];
+    self.tweetManager = [[TweetManager alloc] init];
+    [self.tweetManager requestTweetSearchAPI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onSuccessGetTweetList:(NSNotification *)notificationCenter {
+    NSArray *tweets = [[notificationCenter userInfo] objectForKey:@"tweets"];
+    for (NSString *tweet in tweets) {
+        NSString *keyword = @"iOS";
+        NSRange range = [tweet rangeOfString:keyword];
+        if (range.location != NSNotFound) {
+            NSLog(@"is Found");
+        } else {
+            NSLog(@"Not Found");
+        }
+    }
 }
 
 /*
