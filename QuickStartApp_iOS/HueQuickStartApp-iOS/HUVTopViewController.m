@@ -7,8 +7,14 @@
 //
 
 #import "HUVTopViewController.h"
+#import "TweetManager.h"
+#import "Notifications.h"
+
+NSString *const kUpdateTweetsInfo  = @"kUpdateTweetsInfo";
 
 @interface HUVTopViewController ()
+
+@property (nonatomic, strong) TweetManager *tweetManager;
 
 @end
 
@@ -17,11 +23,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onSuccessGetTweetList:) name:SuccessGetTweesList object:nil];
+    self.tweetManager = [[TweetManager alloc] init];
+    [self.tweetManager requestTweetSearchAPI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)onSuccessGetTweetList:(NSNotification *)notificationCenter {
+    NSArray *tweets = [[notificationCenter userInfo] objectForKey:@"tweets"];
+    for (NSString *tweet in tweets) {
+        NSString *keyword = @"iOS";
+        NSRange range = [tweet rangeOfString:keyword];
+        if (range.location != NSNotFound) {
+            NSLog(@"is Found");
+        } else {
+            NSLog(@"Not Found");
+        }
+    }
 }
 
 /*

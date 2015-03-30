@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const kUpdateTweetsInfo;
+
 @interface HUVTopViewController : UIViewController
 
 @end
