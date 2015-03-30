@@ -61,14 +61,44 @@
     self.openEarsEventsObserver.delegate = self;
     [self.openEarsEventsObserver setDelegate:self];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-    _words = @[
-               @"OHAYOU",
-               @"SUKINAKO",
-               @"COOL"];
-    _colors = @[
-                [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0],
-                [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0],
-                [UIColor colorWithRed:0.0 green:0.0 blue:0.5 alpha:1.0]];
+    _words = @[@"OHAYOU",
+            @"SUKINAKO",
+            @"KUULU",
+            @"SAIKOH",
+            @"SUISHO",
+            @"TWITTER",
+            @"SUBARASHI",
+            @"SUGOI",
+            @"SAMISI",
+            @"KANASI",
+            @"SHOUDA",
+            @"HAKKASON",
+            @"MAINASU",
+            @"PLASU",
+            @"IKEZAEA",
+            @"KAWAI",
+//            @"HUE",
+            @"OWARI",
+//            @"KOE"
+    ];
+    _colors = @[[UIColor colorWithRed:1 green:1 blue:1 alpha:1],
+            [UIColor colorWithRed:1 green:0 blue:0 alpha:1],
+            [UIColor colorWithRed:0 green:0 blue:0.5 alpha:1],
+            [UIColor colorWithRed:1 green:1 blue:0 alpha:1],
+            [UIColor colorWithRed:0 green:0 blue:0 alpha:1],
+            [UIColor colorWithRed:0 green:0.67 blue:1 alpha:1],
+            [UIColor colorWithRed:1 green:1 blue:0 alpha:1],
+            [UIColor colorWithRed:1 green:1 blue:0 alpha:1],
+            [UIColor colorWithRed:1 green:0.4 blue:1 alpha:1],
+            [UIColor colorWithRed:1 green:0.4 blue:1 alpha:1],
+            [UIColor colorWithRed:1 green:1 blue:1 alpha:1],
+            [UIColor colorWithRed:0 green:1 blue:0 alpha:1],
+            [UIColor colorWithRed:1 green:0.6 blue:0 alpha:1],
+            [UIColor colorWithRed:1 green:0 blue:1 alpha:1],
+            [UIColor colorWithRed:1 green:0.6 blue:0.76 alpha:1],
+            [UIColor colorWithRed:1 green:0.6 blue:0.76 alpha:1],
+            [UIColor colorWithRed:0 green:0 blue:0 alpha:1],
+    ];
     OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
     
     // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
@@ -291,6 +321,8 @@
         
         NSUInteger index = [_words indexOfObject:hypothesis];
         if (index != NSNotFound) {
+            self.view.backgroundColor = _colors[index];
+            self.audioPlot.backgroundColor = _colors[index];
             [self setColorWithWord:_words[index] hypothesis:hypothesis color:_colors[index] lightState:lightState];
             // Send lightstate to light
             [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {

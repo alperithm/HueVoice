@@ -159,7 +159,9 @@
 }
 
 - (IBAction)randomizeColoursOfConnectLights:(id)sender{
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HUVTopViewController *vc = [storyboard instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:NO];
 //    [self.randomLightsButton setEnabled:NO];
 //    
 //    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];

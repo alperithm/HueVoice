@@ -336,6 +336,11 @@
 				CLASSPREFIX = PH;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Philips;
+				TargetAttributes = {
+					4CCACF91165692D4008E9D69 = {
+						DevelopmentTeam = 7S3WZ7UUHE;
+					};
+				};
 			};
 			buildConfigurationList = 4CCACF8C165692D4008E9D69 /* Build configuration list for PBXProject "HueQuickStartApp-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
