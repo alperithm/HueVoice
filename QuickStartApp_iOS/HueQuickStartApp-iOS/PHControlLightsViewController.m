@@ -30,6 +30,8 @@
 @property (nonatomic, copy) NSString *pathToFirstDynamicallyGeneratedDictionary;
 @property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedLanguageModel;
 @property (nonatomic, copy) NSString *pathToSecondDynamicallyGeneratedDictionary;
+@property (nonatomic, copy) NSArray *words;
+@property (nonatomic, copy) NSArray *colors;
 
 @end
 
@@ -66,20 +68,19 @@
     self.openEarsEventsObserver.delegate = self;
     [self.openEarsEventsObserver setDelegate:self];
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-    NSArray *words = @[
-                       @"OHAYOU",
-                       @"TANOSHI",
-                       @"KANASHI",
-                       @"WEDNESDAY",
-                       @"THURSDAY",
-                       @"FRIDAY",
-                       @"SATURDAY",
-                       ];
+    _words = @[
+                @"OHAYOU",
+                @"SUKINAKO",
+                @"COOL"];
+    _colors = @[
+                [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0],
+                [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0],
+                [UIColor colorWithRed:0.0 green:0.0 blue:0.5 alpha:1.0]];
     OELanguageModelGenerator *languageModelGenerator = [[OELanguageModelGenerator alloc] init];
     
     // languageModelGenerator.verboseLanguageModelGenerator = TRUE; // Uncomment me for verbose language model generator debug output.
     
-    NSError *error = [languageModelGenerator generateLanguageModelFromArray:words withFilesNamed:@"FirstOpenEarsDynamicLanguageModel" forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
+    NSError *error = [languageModelGenerator generateLanguageModelFromArray:_words withFilesNamed:@"FirstOpenEarsDynamicLanguageModel" forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
     
     
     if(error) {
@@ -166,10 +167,9 @@
     for (PHLight *light in cache.lights.allValues) {
         
         PHLightState *lightState = [[PHLightState alloc] init];
-        CGFloat hue = [self getHue:[UIColor colorWithRed:0.1 green:1.0 blue:0.0 alpha:1.0]];
-        [lightState setHue:[NSNumber numberWithInt:hue * MAX_HUE]];
+        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
         [lightState setBrightness:[NSNumber numberWithInt:254]];
-        [lightState setSaturation:[NSNumber numberWithInt:254]];
+        [lightState setSaturation:[NSNumber numberWithInt:128]];
         
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
@@ -203,17 +203,18 @@
         
         PHLightState *lightState = [[PHLightState alloc] init];
         
-        //[self changeLightColorWithHypothesis:hypothesis lightState:lightState];
-        [self setColorWithWord:@"OHAYOU" hypothesis:hypothesis color:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] lightState:lightState];
-        
-        // Send lightstate to light
-        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-            if (errors != nil) {
-                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-                
-                NSLog(@"Response: %@",message);
-            }
-        }];
+        NSUInteger index = [_words indexOfObject:hypothesis];
+        if (index != NSNotFound) {
+            [self setColorWithWord:_words[index] hypothesis:hypothesis color:_colors[index] lightState:lightState];
+            // Send lightstate to light
+            [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+                if (errors != nil) {
+                    NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                    
+                    NSLog(@"Response: %@",message);
+                }
+            }];
+        }
     }
 }
 
@@ -234,7 +235,7 @@
     if (match.location != NSNotFound) {
         CGFloat hue = [self getHue:color];
         [lightState setHue:[NSNumber numberWithInt:hue * MAX_HUE]];
-        [lightState setBrightness:[NSNumber numberWithInt:254]];
+        [lightState setBrightness:[NSNumber numberWithInt:128]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
     } else {
         NSLog(@"Not Found");
