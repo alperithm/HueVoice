@@ -160,29 +160,29 @@
 
 - (IBAction)randomizeColoursOfConnectLights:(id)sender{
     
-    //    [self.randomLightsButton setEnabled:NO];
-    //
-    //    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-    //    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    //
-    //    for (PHLight *light in cache.lights.allValues) {
-    //
-    //        PHLightState *lightState = [[PHLightState alloc] init];
-    //        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
-    //        [lightState setBrightness:[NSNumber numberWithInt:254]];
-    //        [lightState setSaturation:[NSNumber numberWithInt:128]];
-    //
-    //        // Send lightstate to light
-    //        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-    //            if (errors != nil) {
-    //                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-    //
-    //                NSLog(@"Response: %@",message);
-    //            }
-    //
-    //            [self.randomLightsButton setEnabled:YES];
-    //        }];
-    //    }
+        [self.randomLightsButton setEnabled:NO];
+    
+        PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+        PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+    
+        for (PHLight *light in cache.lights.allValues) {
+    
+            PHLightState *lightState = [[PHLightState alloc] init];
+            [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+            [lightState setBrightness:[NSNumber numberWithInt:254]];
+            [lightState setSaturation:[NSNumber numberWithInt:128]];
+    
+            // Send lightstate to light
+            [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+                if (errors != nil) {
+                    NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+    
+                    NSLog(@"Response: %@",message);
+                }
+    
+                [self.randomLightsButton setEnabled:YES];
+            }];
+        }
 }
 
 - (void)findNewBridgeButtonAction{
