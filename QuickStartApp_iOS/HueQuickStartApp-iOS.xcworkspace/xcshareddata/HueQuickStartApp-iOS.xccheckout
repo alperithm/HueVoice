@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FDB62C81-4B39-4F17-8162-32D2B32C6944</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HueQuickStartApp-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>269D6C064EB0B5726D3D24955784DCE565BB9745</key>
+		<string>https://github.com/alperithm/HueVoice.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>QuickStartApp_iOS/HueQuickStartApp-iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>269D6C064EB0B5726D3D24955784DCE565BB9745</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alperithm/HueVoice.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>269D6C064EB0B5726D3D24955784DCE565BB9745</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>269D6C064EB0B5726D3D24955784DCE565BB9745</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HueVoice</string>
+		</dict>
+	</array>
+</dict>
+</plist>

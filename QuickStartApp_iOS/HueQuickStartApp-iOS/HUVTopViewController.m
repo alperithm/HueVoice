@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.microphone = [EZMicrophone microphoneWithDelegate:self];
+
+    self.audioPlot.backgroundColor = [UIColor clearColor];
+    self.audioPlot.color = [UIColor whiteColor];
+    self.audioPlot.plotType = EZPlotTypeBuffer;
+//    [self.microphone startFetchingAudio];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.microphone startFetchingAudio];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +43,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - EZMicrophoneDelegate
+
+- (void)microphone:(EZMicrophone *)microphone hasAudioReceived:(float **)buffer withBufferSize:(UInt32)bufferSize withNumberOfChannels:(UInt32)numberOfChannels {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
+    });
+}
+
+- (void)microphone:(EZMicrophone *)microphone hasAudioStreamBasicDescription:(AudioStreamBasicDescription)audioStreamBasicDescription {
+    [EZAudio printASBD:audioStreamBasicDescription];
+}
 
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EZAudio.h"
 
-@interface HUVTopViewController : UIViewController
+@interface HUVTopViewController : UIViewController<EZMicrophoneDelegate>
+
+@property (nonatomic, weak) IBOutlet EZAudioPlotGL *audioPlot;
+@property (nonatomic, strong) EZMicrophone *microphone;
 
 @end
