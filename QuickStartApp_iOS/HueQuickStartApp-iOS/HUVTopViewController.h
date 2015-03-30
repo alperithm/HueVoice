@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EZAudio.h"
 
-extern NSString *const kUpdateTweetsInfo;
+@interface HUVTopViewController : UIViewController<EZMicrophoneDelegate>
 
-@interface HUVTopViewController : UIViewController
+@property (nonatomic, weak) IBOutlet EZAudioPlotGL *audioPlot;
+@property (nonatomic, strong) EZMicrophone *microphone;
+
+- (IBAction)addButtonPressed:(id)sender;
+
 
 @end

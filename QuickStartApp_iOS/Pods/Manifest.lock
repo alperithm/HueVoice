@@ -1,0 +1,13 @@
+PODS:
+  - Canvas (0.1.2)
+  - EZAudio (0.0.6)
+
+DEPENDENCIES:
+  - Canvas
+  - EZAudio
+
+SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  EZAudio: feb8e1c3ec17d8933bc2efc66b59ead1f2e79e54
+
+COCOAPODS: 0.35.0

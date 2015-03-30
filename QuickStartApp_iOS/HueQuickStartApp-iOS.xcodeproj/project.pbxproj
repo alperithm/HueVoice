@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166943141ABC300800BF8B37 /* HueSDK_iOS.framework */; };
+		1A7BE0225D59E650B203C13C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34A5998958191594B989948 /* libPods.a */; };
+		257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D12851AC8EF83001F67DC /* libPods-Canvas.a */; };
 		25F744911AC8C971007FB565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F744901AC8C971007FB565 /* Main.storyboard */; };
 		25F744941AC8CD01007FB565 /* HUVTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F744931AC8CD01007FB565 /* HUVTopViewController.m */; };
+		25F744961AC8D247007FB565 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F744951AC8D247007FB565 /* Images.xcassets */; };
+		25F744981AC8DB92007FB565 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F744971AC8DB92007FB565 /* AVFoundation.framework */; };
+		25F7449A1AC8DB9A007FB565 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F744991AC8DB9A007FB565 /* GLKit.framework */; };
+		25F7449C1AC8DBC4007FB565 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */; };
+		25F7449E1AC8DE53007FB565 /* libPods-EZAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */; };
 		4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C84531681F010003EE085 /* PHLoadingViewController.m */; };
 		4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C84541681F010003EE085 /* PHLoadingViewController.xib */; };
 		4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCACF96165692D4008E9D69 /* UIKit.framework */; };
@@ -44,9 +51,15 @@
 
 /* Begin PBXFileReference section */
 		166943141ABC300800BF8B37 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		257D12851AC8EF83001F67DC /* libPods-Canvas.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Canvas.a"; path = "Pods/build/Debug-iphoneos/libPods-Canvas.a"; sourceTree = "<group>"; };
 		25F744901AC8C971007FB565 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		25F744921AC8CD01007FB565 /* HUVTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUVTopViewController.h; sourceTree = "<group>"; };
 		25F744931AC8CD01007FB565 /* HUVTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUVTopViewController.m; sourceTree = "<group>"; };
+		25F744951AC8D247007FB565 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		25F744971AC8DB92007FB565 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		25F744991AC8DB9A007FB565 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-EZAudio.a"; path = "Pods/build/Debug-iphoneos/libPods-EZAudio.a"; sourceTree = "<group>"; };
 		4C1C84521681F010003EE085 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		4C1C84531681F010003EE085 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		4C1C84541681F010003EE085 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
@@ -70,7 +83,10 @@
 		4CCACFD3165693F4008E9D69 /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
 		4CCACFD5165693F4008E9D69 /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
 		4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
+		53A3F3E6D09C3FE60739B6F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C34A5998958191594B989948 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E0B3725E4BD7CA76322D06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA6266031AC8D7650074832A /* TweetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetManager.h; sourceTree = "<group>"; };
 		CA6266041AC8D7650074832A /* TweetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetManager.m; sourceTree = "<group>"; };
 		CA6266061AC8D7AC0074832A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -101,18 +117,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */,
+				25F7449E1AC8DE53007FB565 /* libPods-EZAudio.a in Frameworks */,
+				25F7449C1AC8DBC4007FB565 /* AudioToolbox.framework in Frameworks */,
+				25F7449A1AC8DB9A007FB565 /* GLKit.framework in Frameworks */,
+				25F744981AC8DB92007FB565 /* AVFoundation.framework in Frameworks */,
 				CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */,
 				CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
 				166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */,
 				4CCACF99165692D4008E9D69 /* Foundation.framework in Frameworks */,
+				1A7BE0225D59E650B203C13C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		243FBA56E018DB59DC3EA6B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7E0B3725E4BD7CA76322D06 /* Pods.debug.xcconfig */,
+				53A3F3E6D09C3FE60739B6F1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4C1C84511681F010003EE085 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +161,7 @@
 				4CCACF9C165692D4008E9D69 /* HueQuickStartApp-iOS */,
 				4CCACF95165692D4008E9D69 /* Frameworks */,
 				4CCACF93165692D4008E9D69 /* Products */,
+				243FBA56E018DB59DC3EA6B4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +176,11 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				257D12851AC8EF83001F67DC /* libPods-Canvas.a */,
+				25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */,
+				25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */,
+				25F744991AC8DB9A007FB565 /* GLKit.framework */,
+				25F744971AC8DB92007FB565 /* AVFoundation.framework */,
 				CA6266081AC8D7B20074832A /* Accounts.framework */,
 				CA6266061AC8D7AC0074832A /* Social.framework */,
 				166943141ABC300800BF8B37 /* HueSDK_iOS.framework */,
@@ -151,6 +188,7 @@
 				F71523F118337FD50033689C /* Lumberjack */,
 				4CCACF96165692D4008E9D69 /* UIKit.framework */,
 				4CCACF98165692D4008E9D69 /* Foundation.framework */,
+				C34A5998958191594B989948 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,6 +205,7 @@
 				4CCACF9D165692D4008E9D69 /* Supporting Files */,
 				25F744921AC8CD01007FB565 /* HUVTopViewController.h */,
 				25F744931AC8CD01007FB565 /* HUVTopViewController.m */,
+				25F744951AC8D247007FB565 /* Images.xcassets */,
 				CA6266031AC8D7650074832A /* TweetManager.h */,
 				CA6266041AC8D7650074832A /* TweetManager.m */,
 				CA8053B61AC8DE7900D291E8 /* Notifications.h */,
@@ -251,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CCACFB0165692D5008E9D69 /* Build configuration list for PBXNativeTarget "HueQuickStartApp-iOS" */;
 			buildPhases = (
+				5A9CC41677D23D06980F2379 /* Check Pods Manifest.lock */,
 				4CCACF8E165692D4008E9D69 /* Sources */,
 				4CCACF8F165692D4008E9D69 /* Frameworks */,
 				4CCACF90165692D4008E9D69 /* Resources */,
+				18A375EF7740AF832255E1E7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,12 +346,46 @@
 				4CCACFDC165693F4008E9D69 /* PHBridgeSelectionViewController.xib in Resources */,
 				4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */,
 				4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */,
+				25F744961AC8D247007FB565 /* Images.xcassets in Resources */,
 				4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */,
 				F7ADC2A117FDAAA70038A1D6 /* PHControlLightsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18A375EF7740AF832255E1E7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A9CC41677D23D06980F2379 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4CCACF8E165692D4008E9D69 /* Sources */ = {
@@ -409,7 +484,10 @@
 		};
 		4CCACFB1165692D5008E9D69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7E0B3725E4BD7CA76322D06 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -422,19 +500,26 @@
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/HueQuickStartApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HueQuickStartApp-iOS/HueQuickStartApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		4CCACFB2165692D5008E9D69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53A3F3E6D09C3FE60739B6F1 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -447,12 +532,16 @@
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/HueQuickStartApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HueQuickStartApp-iOS/HueQuickStartApp-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
