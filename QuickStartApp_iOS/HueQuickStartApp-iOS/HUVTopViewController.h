@@ -14,4 +14,6 @@
 @property (nonatomic, weak) IBOutlet EZAudioPlotGL *audioPlot;
 @property (nonatomic, strong) EZMicrophone *microphone;
 
+- (IBAction)addButtonPressed:(id)sender;
+
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166943141ABC300800BF8B37 /* HueSDK_iOS.framework */; };
 		1A7BE0225D59E650B203C13C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34A5998958191594B989948 /* libPods.a */; };
+		257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D12851AC8EF83001F67DC /* libPods-Canvas.a */; };
 		25F744911AC8C971007FB565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F744901AC8C971007FB565 /* Main.storyboard */; };
 		25F744941AC8CD01007FB565 /* HUVTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F744931AC8CD01007FB565 /* HUVTopViewController.m */; };
 		25F744961AC8D247007FB565 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25F744951AC8D247007FB565 /* Images.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		166943141ABC300800BF8B37 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		257D12851AC8EF83001F67DC /* libPods-Canvas.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Canvas.a"; path = "Pods/build/Debug-iphoneos/libPods-Canvas.a"; sourceTree = "<group>"; };
 		25F744901AC8C971007FB565 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		25F744921AC8CD01007FB565 /* HUVTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUVTopViewController.h; sourceTree = "<group>"; };
 		25F744931AC8CD01007FB565 /* HUVTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUVTopViewController.m; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */,
 				25F7449E1AC8DE53007FB565 /* libPods-EZAudio.a in Frameworks */,
 				25F7449C1AC8DBC4007FB565 /* AudioToolbox.framework in Frameworks */,
 				25F7449A1AC8DB9A007FB565 /* GLKit.framework in Frameworks */,
@@ -161,6 +164,7 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				257D12851AC8EF83001F67DC /* libPods-Canvas.a */,
 				25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */,
 				25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */,
 				25F744991AC8DB9A007FB565 /* GLKit.framework */,
@@ -485,6 +489,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -516,6 +521,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

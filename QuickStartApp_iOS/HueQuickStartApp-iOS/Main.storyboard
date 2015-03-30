@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ivA-wu-9tQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Top View Controller-->
@@ -21,6 +19,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDE-WF-ddK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
+                                    <barButtonItem systemItem="add" id="q7a-rN-d4T">
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="ivA-wu-9tQ" id="So8-9m-fE4"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JR3-qv-XTb"/>
                                     <barButtonItem image="menu" style="plain" id="e4i-qs-M2y">
                                         <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,55 +35,29 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おはよう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-eg-vQF">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="dy5-OC-e1i"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="dy5-OC-e1i"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="dy5-OC-e1i"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htu-Uc-hp2" customClass="EZAudioPlotGL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Htu-Uc-hp2" firstAttribute="centerX" secondItem="SXN-eg-vQF" secondAttribute="centerX" id="0Cb-Ww-Lxx"/>
                             <constraint firstItem="YDE-WF-ddK" firstAttribute="leading" secondItem="I2Z-JG-MQD" secondAttribute="leading" id="62g-mY-Ruk"/>
                             <constraint firstItem="Htu-Uc-hp2" firstAttribute="top" secondItem="QoO-E4-koa" secondAttribute="bottom" constant="180" id="Hsn-ep-NMm"/>
-                            <constraint firstItem="SXN-eg-vQF" firstAttribute="leading" secondItem="I2Z-JG-MQD" secondAttribute="leadingMargin" id="JfI-ge-Ral"/>
                             <constraint firstAttribute="trailing" secondItem="YDE-WF-ddK" secondAttribute="trailing" id="Xig-Iy-0WI"/>
                             <constraint firstItem="eAj-0o-rHP" firstAttribute="top" secondItem="YDE-WF-ddK" secondAttribute="bottom" id="bz8-Nl-nZA"/>
                             <constraint firstItem="Htu-Uc-hp2" firstAttribute="centerY" secondItem="I2Z-JG-MQD" secondAttribute="centerY" id="kVZ-R0-KXa"/>
                             <constraint firstAttribute="trailing" secondItem="Htu-Uc-hp2" secondAttribute="trailing" id="zF4-Ac-Did"/>
-                            <constraint firstItem="SXN-eg-vQF" firstAttribute="top" secondItem="QoO-E4-koa" secondAttribute="bottom" constant="193" id="zJf-1h-cgB"/>
                             <constraint firstItem="Htu-Uc-hp2" firstAttribute="leading" secondItem="I2Z-JG-MQD" secondAttribute="leading" id="zbG-Fx-gCr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YDE-WF-ddK"/>
-                                <exclude reference="SXN-eg-vQF"/>
                                 <exclude reference="Htu-Uc-hp2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="JfI-ge-Ral"/>
-                                <exclude reference="zJf-1h-cgB"/>
                                 <exclude reference="bz8-Nl-nZA"/>
                                 <exclude reference="62g-mY-Ruk"/>
                                 <exclude reference="Xig-Iy-0WI"/>
-                                <exclude reference="0Cb-Ww-Lxx"/>
                                 <exclude reference="Hsn-ep-NMm"/>
                                 <exclude reference="kVZ-R0-KXa"/>
                                 <exclude reference="zF4-Ac-Did"/>
@@ -90,16 +67,12 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YDE-WF-ddK"/>
-                                <include reference="SXN-eg-vQF"/>
                                 <include reference="Htu-Uc-hp2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="JfI-ge-Ral"/>
-                                <include reference="zJf-1h-cgB"/>
                                 <include reference="bz8-Nl-nZA"/>
                                 <include reference="62g-mY-Ruk"/>
                                 <include reference="Xig-Iy-0WI"/>
-                                <include reference="0Cb-Ww-Lxx"/>
                                 <include reference="Hsn-ep-NMm"/>
                                 <include reference="kVZ-R0-KXa"/>
                                 <include reference="zF4-Ac-Did"/>
