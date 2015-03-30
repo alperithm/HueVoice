@@ -117,16 +117,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				257D12861AC8EF83001F67DC /* libPods-Canvas.a in Frameworks */,
 				25F7449E1AC8DE53007FB565 /* libPods-EZAudio.a in Frameworks */,
 				25F7449C1AC8DBC4007FB565 /* AudioToolbox.framework in Frameworks */,
 				25F7449A1AC8DB9A007FB565 /* GLKit.framework in Frameworks */,
 				25F744981AC8DB92007FB565 /* AVFoundation.framework in Frameworks */,
-=======
 				CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */,
 				CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */,
->>>>>>> master
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
 				166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */,
@@ -179,16 +176,13 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				257D12851AC8EF83001F67DC /* libPods-Canvas.a */,
 				25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */,
 				25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */,
 				25F744991AC8DB9A007FB565 /* GLKit.framework */,
 				25F744971AC8DB92007FB565 /* AVFoundation.framework */,
-=======
 				CA6266081AC8D7B20074832A /* Accounts.framework */,
 				CA6266061AC8D7AC0074832A /* Social.framework */,
->>>>>>> master
 				166943141ABC300800BF8B37 /* HueSDK_iOS.framework */,
 				87194E78184F7FA700576916 /* CoreGraphics.framework */,
 				F71523F118337FD50033689C /* Lumberjack */,
@@ -211,14 +205,11 @@
 				4CCACF9D165692D4008E9D69 /* Supporting Files */,
 				25F744921AC8CD01007FB565 /* HUVTopViewController.h */,
 				25F744931AC8CD01007FB565 /* HUVTopViewController.m */,
-<<<<<<< HEAD
 				25F744951AC8D247007FB565 /* Images.xcassets */,
-=======
 				CA6266031AC8D7650074832A /* TweetManager.h */,
 				CA6266041AC8D7650074832A /* TweetManager.m */,
 				CA8053B61AC8DE7900D291E8 /* Notifications.h */,
 				CA8053B71AC8DE7900D291E8 /* Notifications.m */,
->>>>>>> master
 			);
 			path = "HueQuickStartApp-iOS";
 			sourceTree = "<group>";

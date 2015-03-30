@@ -8,23 +8,15 @@
 
 #import <sys/ucred.h>
 #import "HUVTopViewController.h"
-<<<<<<< HEAD
 #import "CSAnimationView.h"
+#import "TweetManager.h"
+#import "Notifications.h"
 
 @interface HUVTopViewController ()
 
 @property (nonatomic) NSInteger popUpIndex;
-=======
-#import "TweetManager.h"
-#import "Notifications.h"
-
-NSString *const kUpdateTweetsInfo  = @"kUpdateTweetsInfo";
-
-@interface HUVTopViewController ()
-
 @property (nonatomic, strong) TweetManager *tweetManager;
 
->>>>>>> master
 @end
 
 @implementation HUVTopViewController
