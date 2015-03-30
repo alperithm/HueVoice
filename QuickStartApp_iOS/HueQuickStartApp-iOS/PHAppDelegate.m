@@ -26,7 +26,7 @@
 @implementation PHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     /***************************************************
      The Hue SDK is created as a property in the App delegate .h file
@@ -35,54 +35,54 @@
      and the SDK instance can then be created:
      // Create sdk instance
      self.phHueSDK = [[PHHueSDK alloc] init];
-     
-     next, the startUpSDK call will initialize the SDK and kick off its regular heartbeat timer:
-     [self.phHueSDK startUpSDK];
-     *****************************************************/
-    
-    // Create sdk instance
-    self.phHueSDK = [[PHHueSDK alloc] init];
+
+    next, the startUpSDK call will initialize the SDK and kick off its regular heartbeat timer:
+    [self.phHueSDK startUpSDK];
+    *****************************************************/
+
+            // Create sdk instance
+                    self.phHueSDK = [[PHHueSDK alloc] init];
     [self.phHueSDK startUpSDK];
     [self.phHueSDK enableLogging:YES];
     // Create the main view controller in a navigation controller and make the navigation controller the rootviewcontroller of the app
-    PHControlLightsViewController *controlLightsViewController = [[PHControlLightsViewController alloc] initWithNibName:@"PHControlLightsViewController" bundle:[NSBundle mainBundle]];
-    
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlLightsViewController];
-    
-    self.window.rootViewController = self.navigationController;
-    [self.window makeKeyAndVisible];
-    
+//    PHControlLightsViewController *controlLightsViewController = [[PHControlLightsViewController alloc] initWithNibName:@"PHControlLightsViewController" bundle:[NSBundle mainBundle]];
+
+////    self.navigationController = [[UINavigationController alloc] initWithRootViewController:controlLightsViewController];
+//
+//    self.window.rootViewController = self.navigationController;
+//    [self.window makeKeyAndVisible];
+
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
-    
+
     /***************************************************
-     The SDK will send the following notifications in response to events:
-     
-     - LOCAL_CONNECTION_NOTIFICATION
-     This notification will notify that the bridge heartbeat occurred and the bridge resources cache data has been updated
-     
-     - NO_LOCAL_CONNECTION_NOTIFICATION
-     This notification will notify that there is no connection with the bridge
-     
-     - NO_LOCAL_AUTHENTICATION_NOTIFICATION
-     This notification will notify that there is no authentication against the bridge
-     *****************************************************/
-    
+    The SDK will send the following notifications in response to events:
+
+    - LOCAL_CONNECTION_NOTIFICATION
+    This notification will notify that the bridge heartbeat occurred and the bridge resources cache data has been updated
+
+    - NO_LOCAL_CONNECTION_NOTIFICATION
+    This notification will notify that there is no connection with the bridge
+
+    - NO_LOCAL_AUTHENTICATION_NOTIFICATION
+    This notification will notify that there is no authentication against the bridge
+    *****************************************************/
+
     [notificationManager registerObject:self withSelector:@selector(localConnection) forNotification:LOCAL_CONNECTION_NOTIFICATION];
     [notificationManager registerObject:self withSelector:@selector(noLocalConnection) forNotification:NO_LOCAL_CONNECTION_NOTIFICATION];
     [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
-    
+
     /***************************************************
-     The local heartbeat is a regular timer event in the SDK. Once enabled the SDK regular collects the current state of resources managed
-     by the bridge into the Bridge Resources Cache
-     *****************************************************/
-    
+    The local heartbeat is a regular timer event in the SDK. Once enabled the SDK regular collects the current state of resources managed
+    by the bridge into the Bridge Resources Cache
+    *****************************************************/
+
     [self enableLocalHeartbeat];
-    
+
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

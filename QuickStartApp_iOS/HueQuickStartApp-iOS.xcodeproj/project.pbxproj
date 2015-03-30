@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166943141ABC300800BF8B37 /* HueSDK_iOS.framework */; };
+		25F744911AC8C971007FB565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F744901AC8C971007FB565 /* Main.storyboard */; };
+		25F744941AC8CD01007FB565 /* HUVTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F744931AC8CD01007FB565 /* HUVTopViewController.m */; };
 		4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C84531681F010003EE085 /* PHLoadingViewController.m */; };
 		4C1C84561681F010003EE085 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1C84541681F010003EE085 /* PHLoadingViewController.xib */; };
 		4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCACF96165692D4008E9D69 /* UIKit.framework */; };
@@ -31,6 +33,10 @@
 		8FA10C141AC8632C009E18AB /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C101AC8632C009E18AB /* Slt.framework */; };
 		8FA10C161AC86344009E18AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C151AC86344009E18AB /* AVFoundation.framework */; };
 		8FA10C181AC8634F009E18AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA10C171AC8634F009E18AB /* AudioToolbox.framework */; };
+		CA6266051AC8D7650074832A /* TweetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6266041AC8D7650074832A /* TweetManager.m */; };
+		CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266061AC8D7AC0074832A /* Social.framework */; };
+		CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266081AC8D7B20074832A /* Accounts.framework */; };
+		CA8053B81AC8DE7900D291E8 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8053B71AC8DE7900D291E8 /* Notifications.m */; };
 		F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */; };
 		F715240218337FD50033689C /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F518337FD50033689C /* DDASLLogger.m */; };
 		F715240318337FD50033689C /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F71523F718337FD50033689C /* DDFileLogger.m */; };
@@ -44,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		166943141ABC300800BF8B37 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		25F744901AC8C971007FB565 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		25F744921AC8CD01007FB565 /* HUVTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUVTopViewController.h; sourceTree = "<group>"; };
+		25F744931AC8CD01007FB565 /* HUVTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUVTopViewController.m; sourceTree = "<group>"; };
 		4C1C84521681F010003EE085 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
 		4C1C84531681F010003EE085 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
 		4C1C84541681F010003EE085 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
@@ -74,6 +83,12 @@
 		8FA10C101AC8632C009E18AB /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		8FA10C151AC86344009E18AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8FA10C171AC8634F009E18AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CA6266031AC8D7650074832A /* TweetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetManager.h; sourceTree = "<group>"; };
+		CA6266041AC8D7650074832A /* TweetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetManager.m; sourceTree = "<group>"; };
+		CA6266061AC8D7AC0074832A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CA6266081AC8D7B20074832A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CA8053B61AC8DE7900D291E8 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		CA8053B71AC8DE7900D291E8 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
 		F71523F218337FD50033689C /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		F71523F318337FD50033689C /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		F71523F418337FD50033689C /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -101,6 +116,8 @@
 				8FA10C181AC8634F009E18AB /* AudioToolbox.framework in Frameworks */,
 				8FA10C161AC86344009E18AB /* AVFoundation.framework in Frameworks */,
 				8FA10C141AC8632C009E18AB /* Slt.framework in Frameworks */,
+				CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */,
+				CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
 				8FA10C131AC8632C009E18AB /* OpenEars.framework in Frameworks */,
@@ -149,6 +166,8 @@
 				8FA10C0E1AC8632C009E18AB /* AcousticModelSpanish.bundle */,
 				8FA10C0F1AC8632C009E18AB /* OpenEars.framework */,
 				8FA10C101AC8632C009E18AB /* Slt.framework */,
+				CA6266081AC8D7B20074832A /* Accounts.framework */,
+				CA6266061AC8D7AC0074832A /* Social.framework */,
 				166943141ABC300800BF8B37 /* HueSDK_iOS.framework */,
 				87194E78184F7FA700576916 /* CoreGraphics.framework */,
 				F71523F118337FD50033689C /* Lumberjack */,
@@ -161,12 +180,19 @@
 		4CCACF9C165692D4008E9D69 /* HueQuickStartApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				25F744901AC8C971007FB565 /* Main.storyboard */,
 				4CCACFA5165692D5008E9D69 /* PHAppDelegate.h */,
 				4CCACFA6165692D5008E9D69 /* PHAppDelegate.m */,
 				F7ADC29D17FDAAA70038A1D6 /* PHControlLightsViewController.h */,
 				F7ADC29E17FDAAA70038A1D6 /* PHControlLightsViewController.m */,
 				F7ADC29F17FDAAA70038A1D6 /* PHControlLightsViewController.xib */,
 				4CCACF9D165692D4008E9D69 /* Supporting Files */,
+				25F744921AC8CD01007FB565 /* HUVTopViewController.h */,
+				25F744931AC8CD01007FB565 /* HUVTopViewController.m */,
+				CA6266031AC8D7650074832A /* TweetManager.h */,
+				CA6266041AC8D7650074832A /* TweetManager.m */,
+				CA8053B61AC8DE7900D291E8 /* Notifications.h */,
+				CA8053B71AC8DE7900D291E8 /* Notifications.m */,
 			);
 			path = "HueQuickStartApp-iOS";
 			sourceTree = "<group>";
@@ -298,6 +324,7 @@
 				4CCACFAB165692D5008E9D69 /* Default@2x.png in Resources */,
 				4CCACFAD165692D5008E9D69 /* Default-568h@2x.png in Resources */,
 				4CCACFDA165693F4008E9D69 /* PHBridgePushLinkViewController.xib in Resources */,
+				25F744911AC8C971007FB565 /* Main.storyboard in Resources */,
 				4CCACFDC165693F4008E9D69 /* PHBridgeSelectionViewController.xib in Resources */,
 				4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */,
 				4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */,
@@ -316,7 +343,9 @@
 			files = (
 				F715240418337FD50033689C /* DDLog.m in Sources */,
 				F715240218337FD50033689C /* DDASLLogger.m in Sources */,
+				25F744941AC8CD01007FB565 /* HUVTopViewController.m in Sources */,
 				4CCACFA3165692D5008E9D69 /* main.m in Sources */,
+				CA8053B81AC8DE7900D291E8 /* Notifications.m in Sources */,
 				4CCACFA7165692D5008E9D69 /* PHAppDelegate.m in Sources */,
 				F715240718337FD50033689C /* DispatchQueueLogFormatter.m in Sources */,
 				F715240518337FD50033689C /* DDTTYLogger.m in Sources */,
@@ -325,6 +354,7 @@
 				F715240118337FD50033689C /* DDAbstractDatabaseLogger.m in Sources */,
 				4C1C84551681F010003EE085 /* PHLoadingViewController.m in Sources */,
 				F715240318337FD50033689C /* DDFileLogger.m in Sources */,
+				CA6266051AC8D7650074832A /* TweetManager.m in Sources */,
 				F7ADC2A017FDAAA70038A1D6 /* PHControlLightsViewController.m in Sources */,
 				F715240618337FD50033689C /* ContextFilterLogFormatter.m in Sources */,
 			);
@@ -415,13 +445,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/HueQuickStartApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HueQuickStartApp-iOS/HueQuickStartApp-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -440,13 +470,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HueQuickStartApp-iOS/HueQuickStartApp-iOS-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/HueQuickStartApp-iOS/HueQuickStartApp-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "HueQuickStartApp-iOS";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
