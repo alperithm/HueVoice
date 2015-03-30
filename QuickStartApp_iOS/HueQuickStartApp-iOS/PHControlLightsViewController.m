@@ -19,6 +19,7 @@
 @property (nonatomic,weak) IBOutlet UILabel *bridgeMacLabel;
 @property (nonatomic,weak) IBOutlet UILabel *bridgeIpLabel;
 @property (nonatomic,weak) IBOutlet UILabel *bridgeLastHeartbeatLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (nonatomic,weak) IBOutlet UIButton *randomLightsButton;
 
 // 音声認識データ
@@ -117,6 +118,7 @@
     [self.bridgeIpLabel setEnabled:NO];
     self.bridgeMacLabel.text = @"Not connected";
     [self.bridgeMacLabel setEnabled:NO];
+    self.wordLabel.text = @"No Word";
     
     [self.randomLightsButton setEnabled:NO];
 }
@@ -164,8 +166,8 @@
     for (PHLight *light in cache.lights.allValues) {
         
         PHLightState *lightState = [[PHLightState alloc] init];
-        
-        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+        CGFloat hue = [self getHue:[UIColor colorWithRed:0.1 green:1.0 blue:0.0 alpha:1.0]];
+        [lightState setHue:[NSNumber numberWithInt:hue * MAX_HUE]];
         [lightState setBrightness:[NSNumber numberWithInt:254]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         
@@ -193,6 +195,7 @@
 {
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@",
           hypothesis, recognitionScore, utteranceID);
+    
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
@@ -201,10 +204,7 @@
         PHLightState *lightState = [[PHLightState alloc] init];
         
         //[self changeLightColorWithHypothesis:hypothesis lightState:lightState];
-        [self setColorWithWord:@"OHAYOU" hypothesis:hypothesis color:@12345 lightState:lightState];
-        
-        [lightState setBrightness:[NSNumber numberWithInt:254]];
-        [lightState setSaturation:[NSNumber numberWithInt:254]];
+        [self setColorWithWord:@"OHAYOU" hypothesis:hypothesis color:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] lightState:lightState];
         
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
@@ -225,15 +225,31 @@
 
 -(void)setColorWithWord:(NSString *)word
              hypothesis:(NSString *)hypothesis
-                  color:(NSNumber *)color
+                  color:(UIColor *)color
              lightState:(PHLightState *)lightState
 {
-    NSRange match = [word rangeOfString:[[hypothesis componentsSeparatedByString:@" "] objectAtIndex:0] options:NSRegularExpressionSearch];
+    NSString* wordStr = [[hypothesis componentsSeparatedByString:@" "] objectAtIndex:0];
+    self.wordLabel.text = wordStr;
+    NSRange match = [word rangeOfString:wordStr options:NSRegularExpressionSearch];
     if (match.location != NSNotFound) {
-        [lightState setHue:color];
+        CGFloat hue = [self getHue:color];
+        [lightState setHue:[NSNumber numberWithInt:hue * MAX_HUE]];
+        [lightState setBrightness:[NSNumber numberWithInt:254]];
+        [lightState setSaturation:[NSNumber numberWithInt:254]];
     } else {
         NSLog(@"Not Found");
     }
+}
+
+-(CGFloat)getHue:(UIColor *)color
+{
+    CGFloat hue = 0.0;
+    CGFloat saturation;
+    CGFloat brightness;
+    CGFloat alpha;
+    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+    NSLog(@"hue : %f", hue);
+    return hue;
 }
 
 @end
