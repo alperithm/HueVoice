@@ -34,6 +34,10 @@
 		4CCACFDD165693F4008E9D69 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD5165693F4008E9D69 /* press_smartbridge.png */; };
 		4CCACFDE165693F4008E9D69 /* press_smartbridge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */; };
 		87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87194E78184F7FA700576916 /* CoreGraphics.framework */; };
+		8F3421D41AC91343001379BF /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F3421D01AC91343001379BF /* AcousticModelEnglish.bundle */; };
+		8F3421D51AC91343001379BF /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F3421D11AC91343001379BF /* AcousticModelSpanish.bundle */; };
+		8F3421D61AC91343001379BF /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3421D21AC91343001379BF /* OpenEars.framework */; };
+		8F3421D71AC91343001379BF /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3421D31AC91343001379BF /* Slt.framework */; };
 		CA6266051AC8D7650074832A /* TweetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6266041AC8D7650074832A /* TweetManager.m */; };
 		CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266061AC8D7AC0074832A /* Social.framework */; };
 		CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6266081AC8D7B20074832A /* Accounts.framework */; };
@@ -85,6 +89,10 @@
 		4CCACFD6165693F4008E9D69 /* press_smartbridge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "press_smartbridge@2x.png"; sourceTree = "<group>"; };
 		53A3F3E6D09C3FE60739B6F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		87194E78184F7FA700576916 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8F3421D01AC91343001379BF /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		8F3421D11AC91343001379BF /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		8F3421D21AC91343001379BF /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		8F3421D31AC91343001379BF /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		C34A5998958191594B989948 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E0B3725E4BD7CA76322D06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CA6266031AC8D7650074832A /* TweetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetManager.h; sourceTree = "<group>"; };
@@ -125,10 +133,12 @@
 				CA6266091AC8D7B20074832A /* Accounts.framework in Frameworks */,
 				CA6266071AC8D7AC0074832A /* Social.framework in Frameworks */,
 				87194E79184F7FA700576916 /* CoreGraphics.framework in Frameworks */,
+				8F3421D71AC91343001379BF /* Slt.framework in Frameworks */,
 				4CCACF97165692D4008E9D69 /* UIKit.framework in Frameworks */,
 				166943151ABC300800BF8B37 /* HueSDK_iOS.framework in Frameworks */,
 				4CCACF99165692D4008E9D69 /* Foundation.framework in Frameworks */,
 				1A7BE0225D59E650B203C13C /* libPods.a in Frameworks */,
+				8F3421D61AC91343001379BF /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +186,10 @@
 		4CCACF95165692D4008E9D69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F3421D01AC91343001379BF /* AcousticModelEnglish.bundle */,
+				8F3421D11AC91343001379BF /* AcousticModelSpanish.bundle */,
+				8F3421D21AC91343001379BF /* OpenEars.framework */,
+				8F3421D31AC91343001379BF /* Slt.framework */,
 				257D12851AC8EF83001F67DC /* libPods-Canvas.a */,
 				25F7449D1AC8DE53007FB565 /* libPods-EZAudio.a */,
 				25F7449B1AC8DBC4007FB565 /* AudioToolbox.framework */,
@@ -337,8 +351,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3421D41AC91343001379BF /* AcousticModelEnglish.bundle in Resources */,
 				4CCACFA1165692D5008E9D69 /* InfoPlist.strings in Resources */,
 				4CCACFA9165692D5008E9D69 /* Default.png in Resources */,
+				8F3421D51AC91343001379BF /* AcousticModelSpanish.bundle in Resources */,
 				4CCACFAB165692D5008E9D69 /* Default@2x.png in Resources */,
 				4CCACFAD165692D5008E9D69 /* Default-568h@2x.png in Resources */,
 				4CCACFDA165693F4008E9D69 /* PHBridgePushLinkViewController.xib in Resources */,
